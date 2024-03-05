@@ -1,0 +1,65 @@
+import sys
+
+
+def zad1():
+    a = input("Podaj zdanie: ")
+    b = a.split()
+    print(len(b))
+
+
+def zad2():
+    sys.stdout.write("Podaj 3 liczby: ")
+    a, b, c = int(sys.stdin.readline()), int(sys.stdin.readline()), int(sys.stdin.readline())
+    sys.stdout.write(str(a ** b + c))
+
+
+def zad3():
+    a = input("Podaj slowo: ")
+    if a == a[::-1]:
+        print("To jest palindrom")
+    else:
+        print("To nie jest palindrom")
+
+
+def zad4():
+    a, i = int(input("Podaj liczbe: ")), 2
+    while i ** 2 <= a:
+        if a % i == 0:
+            print("To nie jest liczba pierwsza")
+            break
+        i += 1
+    else:
+        print("To jest liczba pierwsza")
+
+
+def zad5():
+    doskonala = 0
+    for a in range(6, 1001):
+        suma, i = 1, 2
+        while i ** 2 <= a:
+            if a % i == 0:
+                suma += i
+                suma += (a // i)
+            i += 1
+        if a == suma:
+            doskonala += 1
+    print(f"Ilosc doskonalych do 1000: {doskonala}")
+
+
+def zad6():
+    lista = [12, 12.3, 43, 43.2]
+    for i in range(0, len(lista)):
+        lista[i] = lista[i] ** 2
+    print(lista)
+
+
+def zad7():
+    i, liczba, lista = 1, 0, []
+    while i < 11:
+        liczba = int(input(f"Podaj {i}/10 liczbe: "))
+        if liczba % 2 == 0:
+            lista.append(liczba)
+        i += 1
+    print(lista)
+
+
